@@ -874,9 +874,11 @@
     marqueeEl.classList.add('hidden');
     contentEl.classList.remove('hidden');
     document.body.classList.remove('on-cover');
-    window.scrollTo(0,0);
-    setActiveNav('trip');
-    history.replaceState(null,'','#trip');
+    setActiveNav('committee');
+    requestAnimationFrame(()=>{
+      document.getElementById('committee').scrollIntoView({behavior:'auto', block:'start'});
+    });
+    history.replaceState(null,'','#committee');
   }
 
   function goHome(e){
